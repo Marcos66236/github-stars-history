@@ -1,0 +1,21 @@
+{
+  "repository": "facebook/react",
+  "fetched_at": "2026-09-15T10:30:00+00:00",
+  "summary": {
+    "repo": "facebook/react",
+    "total": 231847,
+    "first_star": "2013-05-24",
+    "latest_star": "2026-09-15",
+    "age_days": 4862,
+    "avg_per_day": 47.8,
+    "last_7_days": 287,
+    "last_30_days": 1043,
+    "last_365_days": 11294,
+    "peak_day": "2023-10-05",
+    "peak_count": 2341
+  },
+  "stars": [
+    {"user": "octocat", "starred_at": "2013-05-24T09:23:41Z"},
+    {"user": "example-user", "starred_at": "2013-05-25T14:07:22Z"}
+  ]
+}
