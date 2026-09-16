@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="GitHub Star History" width="720">
+  <img src="assets/banner.svg" alt="GitHub Stars History" width="720">
 </p>
 
 <p align="center">
@@ -10,40 +10,31 @@
 </p>
 
 <p align="center">
-  Track the complete star history of any GitHub repository.<br>
+  Track the complete stars history of any GitHub repository.<br>
   Growth patterns, trending velocity, multi-repo comparison, CSV and JSON export.
 </p>
 
 <p align="center">
-  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/blog/how-github-stars-work/">How GitHub Stars Work</a> · <a href="https://t.me/AlpinTamhas928">Telegram</a>
+  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/blog/how-github-stars-work/">How GitHub Stars Work</a>
 </p>
 
 ---
 
-<p align="center">
-  <a href="https://t.me/AlpinTamhas928"><img src="./assets/telegram-blue.svg" width="200" alt="Telegram - @AlpinTamhas928"></a>
-</p>
+## Why stars history matters
 
-<p align="center"><b>Sponsorship &amp; contact:</b> ranking projects in the <b>top 1-5 GitHub search results</b> — <a href="https://t.me/AlpinTamhas928">message me on Telegram</a> to get yours there.</p>
-
----
-
-## Why star history matters
-
-Stars are not vanity. GitHub uses star velocity as a core signal for its **Trending** page, **Explore** feed, and **search ranking**. A repository gaining 200 stars in 24 hours is more likely to surface than one with 10,000 total stars but flat recent growth.
+GitHub uses star velocity as a core signal for its **Trending** page, **Explore** feed, and **search ranking**. A repository gaining 200 stars in 24 hours is more likely to surface than one with 10,000 total stars but flat recent growth.
 
 This tool gives you the raw data: when each star was given, by whom, and at what rate. Compare your project against competitors, track your own growth week by week, and understand the velocity patterns that drive GitHub discovery.
-
-For the full mechanics behind GitHub's algorithms, see [how GitHub stars actually work](https://buygithub.com/blog/how-github-stars-work/).
 
 ## Features
 
 | Feature | Description |
 |---------|-------------|
-| **Full history** | Every star with exact timestamp, from the first to the latest |
+| **Full history** | Every star with exact timestamp, first to latest |
 | **Growth analysis** | Daily, weekly, monthly, yearly growth rates |
-| **Peak detection** | Identifies the single best day and the velocity around it |
+| **Peak detection** | Identifies the best day and the velocity around it |
 | **Multi-repo compare** | Pass multiple repos and compare growth patterns |
+| **Velocity report** | Daily star gain over the last 30 days with visual bars |
 | **Export** | CSV and JSON output for analysis or visualization |
 | **Rate-limit aware** | Automatic retry with backoff on GitHub API limits |
 | **Token support** | Optional GitHub token for 5,000 req/hour instead of 60 |
@@ -53,8 +44,15 @@ For the full mechanics behind GitHub's algorithms, see [how GitHub stars actuall
 ```bash
 git clone https://github.com/Marcos66236/github-star-history.git
 cd github-star-history
-pip install requests
+pip install -r requirements.txt
 python star_history.py torvalds/linux
+```
+
+Or install as a package:
+
+```bash
+pip install -e .
+star-history torvalds/linux
 ```
 
 ## Usage
@@ -66,7 +64,7 @@ python star_history.py facebook/react
 ```
 
 ```
-Fetching star history for facebook/react...
+Fetching stars history for facebook/react...
   Total: 231,847 stars
 
 Repository: facebook/react
@@ -88,27 +86,33 @@ Exported to facebook_react_stars.csv
 ### Compare multiple repositories
 
 ```bash
-python star_history.py facebook/react vuejs/vue sveltejs/svelte angular/angular
+python star_history.py facebook/react vuejs/vue sveltejs/svelte
 ```
 
-Outputs a separate analysis for each repository. Compare growth rates, peak days, and velocity side by side.
+### Velocity report
+
+```bash
+python examples/velocity_report.py facebook/react
+```
+
+Shows daily stars gain over the last 30 days with visual bar charts in the terminal.
 
 ### Export formats
 
 ```bash
-# CSV with user and timestamp per star (default)
+# CSV (default)
 python star_history.py owner/repo --format csv
 
-# JSON with full analysis and metadata
+# JSON with full analysis
 python star_history.py owner/repo --format json
 
 # Summary only, no file export
 python star_history.py owner/repo --summary
 ```
 
-### Using a GitHub token
+### GitHub token
 
-Without a token, the GitHub API allows 60 requests per hour. For repositories with thousands of stars, set a token:
+Without a token: 60 requests/hour. With a token: 5,000 requests/hour.
 
 ```bash
 export GITHUB_TOKEN=ghp_your_token_here
@@ -119,8 +123,6 @@ Generate a token at [github.com/settings/tokens](https://github.com/settings/tok
 
 ## How it works
 
-The GitHub API endpoint:
-
 ```
 GET /repos/{owner}/{repo}/stargazers
 Accept: application/vnd.github.star+json
@@ -128,51 +130,45 @@ Accept: application/vnd.github.star+json
 
 Returns each star event with a timestamp. The tool paginates through the full history at 100 entries per request, handles rate limits with automatic backoff, and reconstructs the complete growth timeline.
 
-**Star velocity** is one of the primary signals GitHub uses for Trending. A new project gaining 50 stars in a day has higher relative velocity than a mature project with 50,000 stars gaining 100. The Trending page surfaces repositories with unusual acceleration in their star rate, not just high totals.
+**Star velocity** is one of the primary signals GitHub uses for Trending. A new project gaining 50 stars in a day has higher relative velocity than a mature project with 50,000 stars gaining 100. Trending surfaces repositories with unusual acceleration, not just high totals.
 
-## Sample output
+Read the full analysis: [How GitHub Stars Actually Work](https://buygithub.com/blog/how-github-stars-work/)
 
-See [`sample-output.json`](sample-output.json) for a complete JSON output example.
+## Project structure
 
-```json
-{
-  "repository": "facebook/react",
-  "summary": {
-    "total": 231847,
-    "avg_per_day": 47.8,
-    "last_30_days": 1043,
-    "peak_day": "2023-10-05",
-    "peak_count": 2341
-  }
-}
+```
+github-star-history/
+├── star_history.py           Main tool
+├── setup.py                  Package configuration
+├── requirements.txt          Dependencies
+├── examples/
+│   ├── compare_frameworks.py Compare frontend frameworks
+│   └── velocity_report.py    30-day velocity chart
+├── tests/
+│   └── test_star_history.py  Unit tests
+├── sample-output.json        Example JSON output
+├── CHANGELOG.md              Version history
+├── CONTRIBUTING.md            Contribution guidelines
+└── LICENSE                   MIT
+```
+
+## Running tests
+
+```bash
+python -m pytest tests/
+# or
+python -m unittest tests/test_star_history.py
 ```
 
 ## Requirements
 
 - Python 3.8+
-- `requests` (`pip install requests`)
-- Optional: GitHub personal access token
+- `requests` library
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-<p align="center">
-  <b>Seen by the people who matter.</b><br>
-  <i>Top 1-5 GitHub search placement for your keywords, done quietly and properly.</i>
-</p>
-
-<p align="center">
-  🔍 <b>Right audience</b> &nbsp;·&nbsp; 📈 <b>Steady growth</b> &nbsp;·&nbsp; 💸 <b>Budget-friendly</b>
-</p>
-
-<p align="center">
-  <a href="https://t.me/AlpinTamhas928"><img src="./assets/telegram-dark.svg" width="220" alt="Telegram - @AlpinTamhas928"></a><br>
-  <i>Contact me on Telegram for the package — small budgets, real results</i>
-</p>
+MIT. See [LICENSE](LICENSE).
