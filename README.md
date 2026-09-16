@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/blog/how-github-stars-work/">How GitHub Stars Work</a>
+  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history">How GitHub Stars Work</a>
 </p>
 
 ---
@@ -132,7 +132,7 @@ Returns each star event with a timestamp. The tool paginates through the full hi
 
 **Star velocity** is one of the primary signals GitHub uses for Trending. A new project gaining 50 stars in a day has higher relative velocity than a mature project with 50,000 stars gaining 100. Trending surfaces repositories with unusual acceleration, not just high totals.
 
-Read the full analysis: [How GitHub Stars Actually Work](https://buygithub.com/blog/how-github-stars-work/)
+Read the full analysis: [How GitHub Stars Actually Work](https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history)
 
 ## Project structure
 
