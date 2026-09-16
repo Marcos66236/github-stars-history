@@ -12,8 +12,8 @@
   <rect width="720" height="200" fill="url(#bg)"/>
   <rect width="720" height="200" fill="url(#glow)"/>
   <rect x="0" y="0" width="720" height="2" fill="#F97316"/>
-  <text x="40" y="55" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="700" fill="#F1F3F6" letter-spacing="-0.5">GitHub Star History</text>
-  <text x="40" y="85" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="#737E8E">Track the complete star history of any GitHub repository</text>
+  <text x="40" y="55" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="700" fill="#F1F3F6" letter-spacing="-0.5">GitHub Stars History</text>
+  <text x="40" y="85" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="#737E8E">Track the complete stars history of any GitHub repository</text>
   <text x="40" y="120" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#B8C0CC">Full timeline · Growth analysis · Peak detection · Multi-repo compare · CSV/JSON export</text>
   <g opacity="0.25" transform="translate(400,110)">
     <path d="M0,70 C40,68 70,60 120,35 C170,5 210,-5 280,-8" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
@@ -25,5 +25,7 @@
   <text x="177" y="169" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#B8C0CC" text-anchor="middle">MIT</text>
   <rect x="224" y="150" width="100" height="28" rx="6" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
   <text x="274" y="169" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#B8C0CC" text-anchor="middle">Zero config</text>
+  <rect x="336" y="150" width="120" height="28" rx="6" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="396" y="169" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#4ADE80" text-anchor="middle">buygithub.com</text>
   <rect x="0" y="198" width="720" height="2" fill="#F97316" opacity="0.3"/>
 </svg>

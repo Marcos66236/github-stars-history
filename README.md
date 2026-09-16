@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Marcos66236/github-star-history/stargazers"><img src="https://img.shields.io/github/stars/Marcos66236/github-star-history?style=flat&color=f97316" alt="Stars"></a>
-  <a href="https://github.com/Marcos66236/github-star-history/network/members"><img src="https://img.shields.io/github/forks/Marcos66236/github-star-history?style=flat&color=22d3ee" alt="Forks"></a>
-  <a href="https://github.com/Marcos66236/github-star-history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Marcos66236/github-star-history?style=flat&color=34d399" alt="License"></a>
+  <a href="https://github.com/Marcos66236/github-stars-history/stargazers"><img src="https://img.shields.io/github/stars/Marcos66236/github-stars-history?style=flat&color=f97316" alt="Stars"></a>
+  <a href="https://github.com/Marcos66236/github-stars-history/network/members"><img src="https://img.shields.io/github/forks/Marcos66236/github-stars-history?style=flat&color=22d3ee" alt="Forks"></a>
+  <a href="https://github.com/Marcos66236/github-stars-history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Marcos66236/github-stars-history?style=flat&color=34d399" alt="License"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.8+-3776AB?style=flat&logo=python&logoColor=white" alt="Python 3.8+"></a>
 </p>
 
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history">How GitHub Stars Work</a>
+  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">How GitHub Stars Work</a>
 </p>
 
 ---
@@ -34,7 +34,7 @@ This tool gives you the raw data: when each star was given, by whom, and at what
 | **Growth analysis** | Daily, weekly, monthly, yearly growth rates |
 | **Peak detection** | Identifies the best day and the velocity around it |
 | **Multi-repo compare** | Pass multiple repos and compare growth patterns |
-| **Velocity report** | Daily star gain over the last 30 days with visual bars |
+| **Velocity report** | Daily stars gain over the last 30 days with visual bars |
 | **Export** | CSV and JSON output for analysis or visualization |
 | **Rate-limit aware** | Automatic retry with backoff on GitHub API limits |
 | **Token support** | Optional GitHub token for 5,000 req/hour instead of 60 |
@@ -42,8 +42,8 @@ This tool gives you the raw data: when each star was given, by whom, and at what
 ## Quick start
 
 ```bash
-git clone https://github.com/Marcos66236/github-star-history.git
-cd github-star-history
+git clone https://github.com/Marcos66236/github-stars-history.git
+cd github-stars-history
 pip install -r requirements.txt
 python star_history.py torvalds/linux
 ```
@@ -132,12 +132,12 @@ Returns each star event with a timestamp. The tool paginates through the full hi
 
 **Star velocity** is one of the primary signals GitHub uses for Trending. A new project gaining 50 stars in a day has higher relative velocity than a mature project with 50,000 stars gaining 100. Trending surfaces repositories with unusual acceleration, not just high totals.
 
-Read the full analysis: [How GitHub Stars Actually Work](https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-star-history)
+Read the full analysis: [How GitHub Stars Actually Work](https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history)
 
 ## Project structure
 
 ```
-github-star-history/
+github-stars-history/
 ├── star_history.py           Main tool
 ├── setup.py                  Package configuration
 ├── requirements.txt          Dependencies
@@ -172,3 +172,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+---
+
+<p align="center"><b>Related resources from <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">buygithub.com</a></b></p>
+
+<p align="center">
+  <a href="https://buygithub.com/buy-github-stars/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">GitHub Stars Service</a> · 
+  <a href="https://buygithub.com/buy-github-followers/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">GitHub Followers</a> · 
+  <a href="https://buygithub.com/github-search-ranking/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">Search Ranking</a> · 
+  <a href="https://buygithub.com/old-github-accounts/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">Aged Accounts</a> · 
+  <a href="https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">Blog</a>
+</p>
