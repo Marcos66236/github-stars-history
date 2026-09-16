@@ -9,6 +9,10 @@
 </p>
 
 <p align="center">
+  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history"><b>buygithub.com</b></a> · <a href="https://buygithub.com/product/stars/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">How We Deliver Stars</a> · <a href="https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">Blog</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/Marcos66236/github-stars-history/stargazers"><img src="https://img.shields.io/github/stars/Marcos66236/github-stars-history?style=flat&color=f97316" alt="Stars"></a>
   <a href="https://github.com/Marcos66236/github-stars-history/network/members"><img src="https://img.shields.io/github/forks/Marcos66236/github-stars-history?style=flat&color=22d3ee" alt="Forks"></a>
   <a href="https://github.com/Marcos66236/github-stars-history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Marcos66236/github-stars-history?style=flat&color=34d399" alt="License"></a>
