@@ -3,6 +3,12 @@
 </p>
 
 <p align="center">
+  <a href="https://buygithub.com/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history">
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3000&pause=1500&color=F97316&center=true&vCenter=true&width=500&lines=GitHub+Stars+%C2%B7+Followers+%C2%B7+Forks;Aged+Accounts+%C2%B7+Search+Ranking;buygithub.com+%E2%80%93+Real+Engagement" alt="buygithub.com services">
+  </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/Marcos66236/github-stars-history/stargazers"><img src="https://img.shields.io/github/stars/Marcos66236/github-stars-history?style=flat&color=f97316" alt="Stars"></a>
   <a href="https://github.com/Marcos66236/github-stars-history/network/members"><img src="https://img.shields.io/github/forks/Marcos66236/github-stars-history?style=flat&color=22d3ee" alt="Forks"></a>
   <a href="https://github.com/Marcos66236/github-stars-history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Marcos66236/github-stars-history?style=flat&color=34d399" alt="License"></a>
