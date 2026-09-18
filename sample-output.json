@@ -1,21 +1,25 @@
 {
-  "repository": "facebook/react",
-  "fetched_at": "2026-09-15T10:30:00+00:00",
+  "repository": "sindresorhus/np",
+  "fetched_at": "2026-09-19T00:30:00+00:00",
+  "note": "Example output. The history array is truncated here; real exports contain one entry per day since the repository's first star.",
   "summary": {
-    "repo": "facebook/react",
-    "total": 231847,
-    "first_star": "2013-05-24",
-    "latest_star": "2026-09-15",
-    "age_days": 4862,
-    "avg_per_day": 47.8,
-    "last_7_days": 287,
-    "last_30_days": 1043,
-    "last_365_days": 11294,
-    "peak_day": "2023-10-05",
-    "peak_count": 2341
+    "repo": "sindresorhus/np",
+    "total": 7712,
+    "first_star": "2015-08-16",
+    "latest_star": "2026-09-18",
+    "age_days": 4052,
+    "avg_per_day": 1.9,
+    "last_7_days": 2,
+    "last_30_days": 5,
+    "last_365_days": 117,
+    "peak_day": "2016-07-07",
+    "peak_count": 373
   },
-  "stars": [
-    {"user": "octocat", "starred_at": "2013-05-24T09:23:41Z"},
-    {"user": "example-user", "starred_at": "2013-05-25T14:07:22Z"}
+  "history": [
+    {"date": "2015-08-16", "stars": 24},
+    {"date": "2015-08-17", "stars": 61},
+    {"date": "2015-08-18", "stars": 9},
+    {"date": "2015-08-19", "stars": 4},
+    {"date": "2015-08-20", "stars": 0}
   ]
 }

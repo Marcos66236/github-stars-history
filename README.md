@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="GitHub Stars History" width="720">
+  <img src="assets/banner.svg" alt="GitHub Stars History — star growth analytics for any repository" width="720">
 </p>
 
 <p align="center">
@@ -13,15 +13,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Marcos66236/github-stars-history/stargazers"><img src="https://img.shields.io/github/stars/Marcos66236/github-stars-history?style=flat&color=f97316" alt="Stars"></a>
+  <a href="https://github.com/Marcos66236/github-stars-history/stargazers"><img src="https://img.shields.io/github/stars/Marcos66236/github-stars-history?style=flat&color=f97316" alt="GitHub stars"></a>
   <a href="https://github.com/Marcos66236/github-stars-history/network/members"><img src="https://img.shields.io/github/forks/Marcos66236/github-stars-history?style=flat&color=22d3ee" alt="Forks"></a>
-  <a href="https://github.com/Marcos66236/github-stars-history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Marcos66236/github-stars-history?style=flat&color=34d399" alt="License"></a>
+  <a href="https://github.com/Marcos66236/github-stars-history/releases"><img src="https://img.shields.io/github/v/release/Marcos66236/github-stars-history?style=flat&color=34d399" alt="Release"></a>
+  <a href="https://github.com/Marcos66236/github-stars-history/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Marcos66236/github-stars-history?style=flat&color=34d399" alt="MIT license"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.8+-3776AB?style=flat&logo=python&logoColor=white" alt="Python 3.8+"></a>
+  <a href="https://docs.github.com/en/rest/activity/starring"><img src="https://img.shields.io/badge/GitHub%20API-star--history-22c55e?style=flat" alt="Uses the GitHub star history API"></a>
+  <a href="#faq"><img src="https://img.shields.io/badge/API%20key-not%20required-34d399?style=flat" alt="No API key required"></a>
 </p>
 
 <p align="center">
-  Track the complete stars history of any GitHub repository.<br>
-  Growth patterns, trending velocity, multi-repo comparison, CSV and JSON export.
+  Track the star history of <b>any</b> public GitHub repository.<br>
+  Daily and weekly growth, peak detection, multi-repo comparison, CSV and JSON export.
 </p>
 
 <p align="center">
@@ -30,24 +33,30 @@
 
 ---
 
-## Why stars history matters
+## Why star history matters
 
-GitHub uses star velocity as a core signal for its **Trending** page, **Explore** feed, and **search ranking**. A repository gaining 200 stars in 24 hours is more likely to surface than one with 10,000 total stars but flat recent growth.
+GitHub uses star velocity as a core signal for its **Trending** page, **Explore** feed, and **search ranking**. A repository gaining 200 stars in 24 hours is more likely to surface than one with 10,000 total stars and flat recent growth.
 
-This tool gives you the raw data: when each star was given, by whom, and at what rate. Compare your project against competitors, track your own growth week by week, and understand the velocity patterns that drive GitHub discovery.
+This tool gives you that data: how many stars a repository gained each day, across its entire life. Compare your project against competitors, measure a launch, verify whether a star spike was earned or delivered, or track your own growth week by week.
+
+## What changed in 2026
+
+Until June 2026, tools like this one read the stargazers listing endpoint to reconstruct per-star timestamps. GitHub then [restricted stargazer and watcher lists](https://github.blog/changelog/2026-06-30-upcoming-access-restrictions-to-public-api-endpoints-and-ui-views) to repository admins and collaborators to protect user privacy — breaking most star-history tools in the ecosystem.
+
+In September 2026, GitHub shipped the fix: a [privacy-safe star history endpoint](https://github.blog/changelog/2026-09-04-new-api-endpoint-provides-privacy-safe-star-history-data) that returns weekly and daily aggregate counts with no stargazer identities. **Version 1.1.0 of this tool migrated to that endpoint.** It works for any public repository again, with no ownership or special access required.
 
 ## Features
 
 | Feature | Description |
 |---------|-------------|
-| **Full history** | Every star with exact timestamp, first to latest |
-| **Growth analysis** | Daily, weekly, monthly, yearly growth rates |
-| **Peak detection** | Identifies the best day and the velocity around it |
-| **Multi-repo compare** | Pass multiple repos and compare growth patterns |
-| **Velocity report** | Daily stars gain over the last 30 days with visual bars |
-| **Export** | CSV and JSON output for analysis or visualization |
-| **Rate-limit aware** | Automatic retry with backoff on GitHub API limits |
-| **Token support** | Optional GitHub token for 5,000 req/hour instead of 60 |
+| **Complete daily history** | Daily star counts from the repository's first star to today |
+| **Growth windows** | 7-day, 30-day, 365-day and all-time rates |
+| **Peak detection** | The single best day and its exact count |
+| **Multi-repo comparison** | Pass any number of repositories and compare their curves |
+| **Velocity report** | 30-day view with terminal bar chart (`examples/velocity_report.py`) |
+| **CSV + JSON export** | Machine-readable daily series for charting or analysis |
+| **Rate-limit aware** | Header-based backoff — no wasted probe requests |
+| **No API key needed** | Public data for public repositories; a token only raises rate limits |
 
 ## Quick start
 
@@ -55,42 +64,42 @@ This tool gives you the raw data: when each star was given, by whom, and at what
 git clone https://github.com/Marcos66236/github-stars-history.git
 cd github-stars-history
 pip install -r requirements.txt
-python star_history.py torvalds/linux
+python star_history.py sindresorhus/np
 ```
 
-Or install as a package:
+Or install it as a command-line tool:
 
 ```bash
-pip install -e .
-star-history torvalds/linux
+pip install git+https://github.com/Marcos66236/github-stars-history.git
+star-history owner/repo
 ```
+
+No token, no signup, no configuration. Works with Python 3.8+.
 
 ## Usage
 
 ### Single repository
 
 ```bash
-python star_history.py facebook/react
+python star_history.py sindresorhus/np
 ```
 
 ```
-Fetching stars history for facebook/react...
-  Total: 231,847 stars
+Fetching star history for sindresorhus/np...
+  Fetched 2,227 stars so far (page 10)...
+  Total: 7,712 stars (20 week pages)
 
-Repository: facebook/react
-Total stars: 231,847
-Created: 2013-05-24
-Age: 13 years, 3 months
+Repository: sindresorhus/np
+Total stars: 7,712
+Created: 2015-08-16
+Age: 11 years, 1 month
 
 Growth summary:
-  Last 7 days:    +287 stars (41.0/day)
-  Last 30 days:   +1,043 stars (34.8/day)
-  Last 365 days:  +11,294 stars (30.9/day)
-  All time:       +231,847 stars (47.8/day)
+  Last 30 days:   +5 stars (0.2/day)
+  Last 365 days:  +117 stars (0.3/day)
+  All time:       +7,712 stars (1.9/day)
 
-Peak day: 2023-10-05 (+2,341 stars)
-
-Exported to facebook_react_stars.csv
+Peak day: 2016-07-07 (+373 stars)
 ```
 
 ### Compare multiple repositories
@@ -102,64 +111,88 @@ python star_history.py facebook/react vuejs/vue sveltejs/svelte
 ### Velocity report
 
 ```bash
-python examples/velocity_report.py facebook/react
+python examples/velocity_report.py sindresorhus/np
 ```
 
-Shows daily stars gain over the last 30 days with visual bar charts in the terminal.
+Shows the last 30 days of star gains as a terminal bar chart.
 
 ### Export formats
 
 ```bash
-# CSV (default)
-python star_history.py owner/repo --format csv
-
-# JSON with full analysis
-python star_history.py owner/repo --format json
-
-# Summary only, no file export
-python star_history.py owner/repo --summary
+python star_history.py owner/repo --format csv    # daily series (default)
+python star_history.py owner/repo --format json   # history + full analysis
+python star_history.py owner/repo --summary       # print only, no files
 ```
 
-### GitHub token
+CSV output is one row per day: `date,stars`. JSON output adds the full analysis block and metadata.
 
-Without a token: 60 requests/hour. With a token: 5,000 requests/hour.
+### GitHub token (optional)
+
+Without a token you get 60 requests/hour; with a token, 5,000. Large repositories need a handful of requests per decade of history, so most users never hit the limit.
 
 ```bash
 export GITHUB_TOKEN=ghp_your_token_here
 python star_history.py torvalds/linux
 ```
 
-Generate a token at [github.com/settings/tokens](https://github.com/settings/tokens). No special scopes needed for public repositories.
+Generate one at [github.com/settings/tokens](https://github.com/settings/tokens) — no special scopes are required for public repositories.
 
 ## How it works
 
 ```
-GET /repos/{owner}/{repo}/stargazers
-Accept: application/vnd.github.star+json
+GET /repos/{owner}/{repo}/stargazers/history
 ```
 
-Returns each star event with a timestamp. The tool paginates through the full history at 100 entries per request, handles rate limits with automatic backoff, and reconstructs the complete growth timeline.
+The endpoint returns weeks of aggregate daily counts, newest first, paginated backwards to the repository's creation week. The tool reconstructs a single daily series, computes growth windows, and stores nothing.
 
-**Star velocity** is one of the primary signals GitHub uses for Trending. A new project gaining 50 stars in a day has higher relative velocity than a mature project with 50,000 stars gaining 100. Trending surfaces repositories with unusual acceleration, not just high totals.
+```
+[
+  { "week": 1789257600, "total": 126, "days": [0, 0, 0, 0, 104, 22, 0] },
+  ...
+]
+```
 
-Read the full analysis: [How GitHub Stars Actually Work](https://buygithub.com/blog/how-github-stars-work/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history)
+Two deliberate design decisions:
+
+- **Daily aggregates, not identities.** GitHub no longer exposes who starred a repository to third parties — and this tool never needed that to measure growth. Counts are enough for velocity, peaks and comparisons.
+- **Header-based rate limiting.** Remaining quota is read from every API response instead of probed with extra requests, so a long history costs exactly as many requests as it has pages.
+
+## FAQ
+
+**Does this work for any repository?**
+Yes — any public repository, whether you own it or not. Private repositories require a token with access.
+
+**Why does the output show daily counts instead of usernames?**
+GitHub restricted stargazer identities to repository admins in June 2026. The public star history endpoint returns aggregate counts only, which is what growth analysis actually uses.
+
+**How far back does the history go?**
+To the repository's creation week. The tool paginates through every week automatically.
+
+**Can I see who starred a repository?**
+Not through this tool. If it is your repository, GitHub's UI and API still give you full stargazer access. For anyone else's, that data is no longer public.
+
+**How do I detect a suspicious star spike?**
+Plot the daily series and look for vertical jumps with no external explanation — a launch, a release, a viral post. Our companion guide covers the checks: [How to tell if GitHub stars are real](https://buygithub.com/how-to-tell-if-github-stars-are-real/?utm_source=github&utm_medium=readme&utm_campaign=github-stars-history).
+
+**Do I need Python?**
+For this CLI, yes. The raw endpoint is plain HTTP and works from any language — see *How it works* above.
 
 ## Project structure
 
 ```
 github-stars-history/
-├── star_history.py           Main tool
-├── setup.py                  Package configuration
-├── requirements.txt          Dependencies
+├── star_history.py            Main tool (fetch, analyze, export)
+├── setup.py                   Package configuration
+├── requirements.txt           Dependencies (requests only)
 ├── examples/
-│   ├── compare_frameworks.py Compare frontend frameworks
-│   └── velocity_report.py    30-day velocity chart
+│   ├── compare_frameworks.py  Compare frontend frameworks
+│   └── velocity_report.py     30-day velocity chart
 ├── tests/
-│   └── test_star_history.py  Unit tests
-├── sample-output.json        Example JSON output
-├── CHANGELOG.md              Version history
+│   └── test_star_history.py   Unit tests
+├── sample-output.json         Example JSON export
+├── CHANGELOG.md               Version history
 ├── CONTRIBUTING.md            Contribution guidelines
-└── LICENSE                   MIT
+└── LICENSE                    MIT
 ```
 
 ## Running tests
@@ -173,11 +206,16 @@ python -m unittest tests/test_star_history.py
 ## Requirements
 
 - Python 3.8+
-- `requests` library
+- [`requests`](https://pypi.org/project/requests/)
+
+## Related tools
+
+- [github-ranking-audit](https://github.com/nMaas8388/github-ranking-audit) — scores a repository's GitHub search ranking signals
+- [github-launch-checklist](https://github.com/repoboost-hq/github-launch-checklist) — the ten checks a repository should pass before launch
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and pull requests are welcome.
 
 ## License
 

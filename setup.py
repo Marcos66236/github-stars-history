@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name="github-star-history",
-    version="1.0.0",
-    description="Track and visualize the star history of any GitHub repository",
+    name="github-stars-history",
+    version="1.1.0",
+    description="Track the star history of any GitHub repository — daily and weekly growth analytics",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Marcos66236",
-    url="https://github.com/Marcos66236/github-star-history",
+    url="https://github.com/Marcos66236/github-stars-history",
     py_modules=["star_history"],
     python_requires=">=3.8",
     install_requires=["requests>=2.28.0"],
